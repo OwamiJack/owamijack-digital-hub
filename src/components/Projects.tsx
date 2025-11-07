@@ -3,17 +3,17 @@ import { Rocket, TrendingUp } from "lucide-react";
 const projects = [
   {
     title: "CAPACITI AI Workflow Automation Pilot",
-    description: "Led the implementation of an AI-powered workflow automation system that streamlined internal document processing, resulting in a 25% improvement in efficiency.",
-    impact: "25% efficiency improvement",
+    description: "Designed and tested an automation process that reduced document processing time by 25%.",
+    impact: "25% time reduction",
     icon: Rocket,
-    tags: ["AI Integration", "Process Automation", "Digital Transformation"],
+    tags: ["AI Integration", "Process Automation", "Workflow Optimization"],
   },
   {
     title: "Masifunde Helpdesk Optimization",
-    description: "Redesigned and optimized the IT helpdesk tracking system, implementing better categorization and priority systems that significantly reduced resolution times.",
-    impact: "40% reduction in unresolved issues",
+    description: "Built a tracking tool that cut unresolved tickets by 40%.",
+    impact: "40% fewer unresolved tickets",
     icon: TrendingUp,
-    tags: ["System Optimization", "IT Support", "Process Improvement"],
+    tags: ["System Optimization", "Helpdesk Management", "Problem Solving"],
   },
 ];
 

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const Navigation = () => {
+  const { toast } = useToast();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -17,6 +19,14 @@ const Navigation = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
+  };
+
+  const handleDownloadResume = () => {
+    toast({
+      title: "Resume download",
+      description: "Your resume download will begin shortly.",
+    });
+    // In production, this would download an actual PDF file
   };
 
   const navItems = [
@@ -54,6 +64,14 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <Button
+              size="sm"
+              onClick={handleDownloadResume}
+              className="bg-primary hover:bg-primary/90"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Resume
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,6 +97,13 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <button
+              onClick={handleDownloadResume}
+              className="flex items-center gap-2 w-full text-left px-4 py-2 text-sm font-medium text-primary hover:bg-secondary/50 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
+            </button>
           </div>
         )}
       </div>
