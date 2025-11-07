@@ -49,20 +49,20 @@ const Skills = () => {
             return (
               <div
                 key={index}
-                className="bg-card rounded-lg p-6 shadow-lg border border-border hover:shadow-xl transition-shadow duration-300"
+                className="bg-card rounded-2xl p-8 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                    <Icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="text-xl font-bold">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground">{category.title}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, i) => (
                     <Badge
                       key={i}
                       variant="secondary"
-                      className="text-sm py-1 px-3 bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="text-sm py-2 px-4 bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-full font-medium border border-border"
                     >
                       {skill}
                     </Badge>

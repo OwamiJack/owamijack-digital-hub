@@ -25,30 +25,30 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-4 bg-secondary/30">
+    <section id="experience" className="py-20 px-4 bg-secondary/20">
       <div className="container max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center">Experience</h2>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="bg-card rounded-lg p-8 shadow-lg border border-border hover:shadow-xl transition-shadow duration-300"
+              className="bg-card rounded-2xl p-10 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Briefcase className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Briefcase className="w-8 h-8 text-primary-foreground" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h3 className="text-2xl font-bold text-foreground">{exp.role}</h3>
-                    <span className="text-sm text-muted-foreground">{exp.period}</span>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                    <h3 className="text-3xl font-bold text-foreground">{exp.role}</h3>
+                    <span className="text-sm text-muted-foreground font-semibold bg-secondary px-4 py-1 rounded-full">{exp.period}</span>
                   </div>
-                  <p className="text-lg text-accent font-semibold mb-4">{exp.company}</p>
-                  <ul className="space-y-2">
+                  <p className="text-xl text-accent font-bold mb-4">{exp.company}</p>
+                  <ul className="space-y-3">
                     {exp.description.map((item, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-accent mr-2">•</span>
-                        <span className="text-muted-foreground">{item}</span>
+                        <span className="text-primary mr-3 text-xl font-bold">•</span>
+                        <span className="text-foreground text-lg">{item}</span>
                       </li>
                     ))}
                   </ul>
