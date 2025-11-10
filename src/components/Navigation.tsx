@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
@@ -64,6 +64,14 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://github.com/owamijack"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Github className="w-5 h-5" />
+            </a>
             <Button
               size="sm"
               onClick={handleDownloadResume}
@@ -97,6 +105,15 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://github.com/owamijack"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+            >
+              <Github className="w-4 h-4" />
+              GitHub
+            </a>
             <button
               onClick={handleDownloadResume}
               className="flex items-center gap-2 w-full text-left px-4 py-2 text-sm font-medium text-primary hover:bg-secondary/50 transition-colors"

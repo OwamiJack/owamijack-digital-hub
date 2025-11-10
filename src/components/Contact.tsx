@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -35,7 +35,7 @@ const Contact = () => {
       <div className="container max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center">Get In Touch</h2>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           <a
             href="mailto:owami.jack@example.com"
             className="flex items-center gap-4 p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow"
@@ -61,6 +61,21 @@ const Contact = () => {
             <div>
               <h3 className="font-semibold mb-1">LinkedIn</h3>
               <p className="text-muted-foreground text-sm">linkedin.com/in/owamijack</p>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/owamijack"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow"
+          >
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Github className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <h3 className="font-semibold mb-1">GitHub</h3>
+              <p className="text-muted-foreground text-sm">github.com/owamijack</p>
             </div>
           </a>
         </div>
