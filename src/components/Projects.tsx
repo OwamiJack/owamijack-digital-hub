@@ -7,6 +7,7 @@ const projects = [
     impact: "25% time reduction",
     icon: Rocket,
     tags: ["AI Integration", "Process Automation", "Workflow Optimization"],
+    link: "#contact",
   },
   {
     title: "Masifunde Helpdesk Optimization",
@@ -14,6 +15,7 @@ const projects = [
     impact: "40% fewer unresolved tickets",
     icon: TrendingUp,
     tags: ["System Optimization", "Helpdesk Management", "Problem Solving"],
+    link: "#contact",
   },
 ];
 
@@ -26,9 +28,10 @@ const Projects = () => {
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
-              <div
+              <a
                 key={index}
-                className="bg-card rounded-2xl p-10 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                href={project.link}
+                className="block bg-card rounded-2xl p-10 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
               >
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6 shadow-lg">
                   <Icon className="w-10 h-10 text-primary-foreground" />
@@ -50,7 +53,7 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
