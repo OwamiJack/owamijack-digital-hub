@@ -50,7 +50,7 @@ const Contact = () => {
           </a>
           
           <a
-            href="https://linkedin.com/in/owamijack"
+            href="https://www.linkedin.com/in/owami-jack-54981a284"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow"
@@ -60,7 +60,7 @@ const Contact = () => {
             </div>
             <div>
               <h3 className="font-semibold mb-1">LinkedIn</h3>
-              <p className="text-muted-foreground text-sm">linkedin.com/in/owamijack</p>
+              <p className="text-muted-foreground text-sm">linkedin.com/in/owami-jack-54981a284</p>
             </div>
           </a>
 
