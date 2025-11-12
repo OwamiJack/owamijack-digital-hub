@@ -1,37 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Upload } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { ArrowDown } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const Hero = () => {
-  const { toast } = useToast();
-  const [profileImage, setProfileImage] = useState<string | null>(null);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        toast({
-          title: "File too large",
-          description: "Please upload an image smaller than 5MB",
-          variant: "destructive",
-        });
-        return;
-      }
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result as string);
-        toast({
-          title: "Photo updated!",
-          description: "Your profile photo has been updated successfully.",
-        });
-      };
-      reader.readAsDataURL(file);
-    }
   };
 
   return (
@@ -40,32 +14,10 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Profile Photo */}
           <div className="flex justify-center md:justify-end animate-in fade-in slide-in-from-left duration-1000">
-            <div className="relative w-80 h-80 group">
+            <div className="relative w-80 h-80">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl"></div>
               <div className="relative w-full h-full bg-background rounded-full flex items-center justify-center border-4 border-primary/30 overflow-hidden shadow-xl">
-                {profileImage ? (
-                  <img src={profileImage} alt="Owami Jack" className="w-full h-full object-cover" />
-                ) : (
-                  <div className="text-8xl text-muted-foreground">👤</div>
-                )}
-                <label
-                  htmlFor="profile-upload"
-                  className="absolute inset-0 bg-primary/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
-                >
-                  <div className="text-center">
-                    <Upload className="w-10 h-10 text-primary-foreground mx-auto mb-2" />
-                    <span className="text-sm text-primary-foreground font-semibold">
-                      Upload Photo
-                    </span>
-                  </div>
-                </label>
-                <input
-                  id="profile-upload"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  className="hidden"
-                />
+                <img src={profilePhoto} alt="Owami Jack - Profile" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
