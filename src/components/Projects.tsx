@@ -96,13 +96,15 @@ const Projects = () => {
               </>
             );
 
-            return project.liveLink && !project.githubLink ? (
+            const primaryLink = project.liveLink || project.githubLink;
+            
+            return primaryLink ? (
               <a
                 key={project.id}
-                href={project.liveLink}
+                href={primaryLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-card rounded-2xl p-10 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 block"
+                className="bg-card rounded-2xl p-10 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 block cursor-pointer"
               >
                 {cardContent}
               </a>
