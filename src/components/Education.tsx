@@ -12,10 +12,21 @@ const education = [
     icon: GraduationCap,
   },
   {
+    title: "National Certificate: Information Technology: Systems Support",
+    institution: "SETA Media, Information And Communication Technologies (NQF Level 5)",
+    icon: Award,
+    certificateUrl: "/certificates/system-support.pdf",
+  },
+  {
     title: "Google Digital Skills for Africa",
     institution: "Google",
     icon: Award,
     optional: true,
+  },
+  {
+    title: "Matriculated",
+    institution: "Happy Home Academy",
+    icon: GraduationCap,
   },
 ];
 
@@ -29,11 +40,8 @@ const Education = () => {
           {education.map((item, index) => {
             const Icon = item.icon;
             
-            return (
-              <div
-                key={index}
-                className="bg-card rounded-2xl p-8 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 flex items-center gap-6"
-              >
+            const content = (
+              <div className="bg-card rounded-2xl p-8 shadow-xl border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 flex items-center gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Icon className="w-8 h-8 text-primary-foreground" />
                 </div>
@@ -46,6 +54,22 @@ const Education = () => {
                     Optional
                   </span>
                 )}
+              </div>
+            );
+            
+            return item.certificateUrl ? (
+              <a
+                key={index}
+                href={item.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={index}>
+                {content}
               </div>
             );
           })}
