@@ -21,6 +21,26 @@ const experiences = [
       "Improved helpdesk response times and system performance",
     ],
   },
+  {
+    company: "KFC",
+    role: "Front of House",
+    period: "Sep 2024 – Present",
+    description: [
+      "Assisted customers with buying food and drinks",
+      "Maintained cleanliness of the sitting area and restaurant lobby",
+      "Provided excellent customer service in a fast-paced environment",
+    ],
+  },
+  {
+    company: "Rage",
+    role: "Retail Assistant, Shop Assistant",
+    period: "Mar 2024 – Aug 2024",
+    description: [
+      "Assisted customers with opening/paying accounts and purchasing goods",
+      "Managed stock packing and displaying clothes as assigned",
+      "Delivered quality customer service and met sales targets",
+    ],
+  },
 ];
 
 const Experience = () => {

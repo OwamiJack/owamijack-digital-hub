@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import ResumeDownload from "@/components/ResumeDownload";
 
 const Hero = () => {
 
@@ -49,6 +50,7 @@ const Hero = () => {
               >
                 Get In Touch
               </Button>
+              <ResumeDownload />
             </div>
           </div>
         </div>
